@@ -23,7 +23,9 @@ Things you may want to cover:
 
 * ...
 
-
+|Title|Type|Description|
+|:---|:---|:---|
+|table|string|テーブルを表示したい|
 
 # chatspace DB設計
 ## usersテーブル
