@@ -32,18 +32,16 @@ Things you may want to cover:
 |password|string|null: false|
 |username|string|null: false|
 ## Association
-- has_many :groups, through: :group_tags
+- has_many :groups, through: :group_id
 - has_many :messages
-- has_many :comments
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false|
-|groupname|string|null :false|
+|name|string|null :false|
 ### Association
-- has_many :users, through: :users_tags
-- has_many :groups
+- has_many :users, through: :users_id
+- has_many :messages
 
 ## groups_usersテーブル
 |Column|Type|Options|
@@ -57,11 +55,11 @@ Things you may want to cover:
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text|
 |image|string|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null :false, foreign_key: true|
 ## Association
 - belongs_to :user
-- has_many :group
+- belongs_to :group
 
