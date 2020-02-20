@@ -28,9 +28,10 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
+|id|integer|null: false|
 |email|string|null: false|
 |password|string|null: false|
-|username|string|null: false|
+|name|string|null: false|
 ## Association
 - has_many :groups, through: :group_id
 - has_many :messages
@@ -38,9 +39,10 @@ Things you may want to cover:
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
+|id|integer|null: false|
 |name|string|null :false|
 ### Association
-- has_many :users, through: :users_id
+- has_many :users, through: :user_id
 - has_many :messages
 
 ## groups_usersテーブル
