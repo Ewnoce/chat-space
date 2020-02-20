@@ -63,14 +63,5 @@ Things you may want to cover:
 |group_id|integer|null :false, foreign_key: true|
 ## Association
 - belongs_to :user
-- has_many :comments
+- has_many :group
 
-## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-## Association
-- belongs_to :message
-- belongs_to :user
