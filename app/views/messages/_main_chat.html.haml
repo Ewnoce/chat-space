@@ -1,0 +1,42 @@
+.chat-main 
+  .chat-main__group-info
+    .chat-main__group-info__left-box
+      .left-box__current-group
+        group
+      .left-box__nenber-list
+        Member :
+        .left-box__nenber-list__member
+          1111name
+    .chat-main__group-info__edit-btn
+      = link_to "#", class: "edit" do
+        Edit
+  .chat-main__message-list
+    .message
+      .message__info
+        .message__info__name
+          1111name
+        .message__info__date
+          2020/01/01(Wed) time
+      .message-text
+        .content
+          good morning!
+  .chat-main__message-form
+    %form.message
+      %input.message__input{placeholder: 'type a message'}
+      .message__btn
+        %label.image
+          = icon('far', 'image', class: 'icon')
+          %input.hidden{type: 'file'}
+    %input.submit{type: 'submit', value: 'Send'}
+        
+
+
+
+//    %form.message
+//      %input.message__input{placeholder: 'type a message'}
+//      .message__btn
+//        %label.image
+//          = icon('far', 'image', class: 'icon')
+//          %input.hidden{type: 'file'}
+//    %input.submit{type: 'submit', value: 'Send'}
+        
