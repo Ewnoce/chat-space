@@ -1,0 +1,193 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.side-bar {
+  background-color: $sideheadcolor;
+  height: 100vh;
+  width: 300px;
+  float: left;
+  display: flex;            /*display: flex;を子要素に付与*/
+  flex-direction: column;   /*display: flex;で子要素を縦並び*/
+  &__user-name{
+    display: flex;          /*display: flex;を子要素に付与*/
+    align-items: center;    /*display: flex;で子要素を上下中央に配置*/
+    background-color: $sideheadcolor;
+    height: 100px;
+    width: 300px;
+    .top-items{
+      display: flex;
+      justify-content: space-between;  /*display: flex;で子要素を両端に配置*/
+      margin: 0px 20px;                /*marginで要素外側左右空白*/
+      background-color: $sideheadcolor;
+      height: 20px;
+      width: 260px;
+      font-size: 16px;
+    
+      &__name{
+        width: 60px;
+        height: 20px;
+      }
+      &__icons{
+        display: flex;
+        justify-content: flex-end;
+        height: 20px;
+        width: 60px;
+        .icon{
+          margin-left: 5px;
+          color: $mainwhite;
+        }
+      }
+    }
+  }
+  &__grouplist{
+    padding: 20px 20px 0px;
+    background-color: #2f3e51;
+    color: $mainwhite;
+    height: calc(100vh - 100px);
+      .group{
+        margin-bottom: 40px;
+        .group-name{
+          margin-bottom: 5px;
+          font-size: 15px;
+        }
+        .new-message{
+          font-size: 11px;
+        }  
+      }
+  }
+}
+
+
+.chat-main {
+  background-color: $mainwhite;
+  height: 100vh;
+  width: calc(100vw - 300px);
+  float: right;
+  &__group-info{
+    display: flex;
+    position: relative;
+    background-color: $mainwhite;
+    height: 100px;
+    width: calc(100vw - 300px);
+    padding: 0px 40px;
+    border-bottom: solid 1px #eeeeee;
+    &__left-box{
+      margin-top: 35px;
+      .left-box__current-group{
+        margin-bottom: 15px;
+        font-size: 20px;
+        color: #333333;
+      }
+      .left-box__nenber-list{
+        display: flex;
+        flex-direction: row;
+        font-size: 12px;
+        color: $lightgray;
+      }
+        .left-box__nenber-list-member{
+          font-size: 12px;
+          color: $lightgray;
+        }
+    }
+    &__edit-btn{
+      position: absolute;
+      right: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
+      line-height: 40px;
+      height: 40px;
+      width: 72px;
+      border: solid 1px $lightblue;
+      cursor: pointer;
+      .edit{
+        text-decoration: none;
+        color: $lightblue;
+      }
+    }
+  }
+
+  &__message-list{
+    background-color: #fafafa;
+    height: calc(100vh - 100px - 90px);
+    padding: 46px 40px 0;
+    overflow: scroll;
+    box-sizing: border-box;
+    .message{
+      &__info{
+        display: flex;
+        &__name{
+          color: #333333;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__date{
+          color: $lightgray;
+          font-size: 12px;
+          margin-left: 10px;
+        }
+      }
+
+      .message-text{
+        margin-top: 12px;
+        .content{
+          color: $gray;
+          font-size: 14px;
+          margin-bottom: 46px;
+        }
+      }
+    }
+  }
+  &__message-form{
+    float: right;
+    display: flex;
+    align-items: center; //上下中央に配置
+    padding: 20px 40px;
+    background-color: #d2d2d2;
+    height: 90px;
+    width: calc(100vw - 300px);
+    .message{
+      position: relative;
+      margin-right: 15px;
+      float: left;
+      height: 50px;
+      width: 100%;
+      background-color: $mainwhite;
+      &__input{ 
+        padding: 0 40px 0 10px;
+        height: 50px;
+        width: 100%;
+        color: $gray;
+      }
+      &__btn{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        .image{
+          cursor: pointer;
+          font-size: 25px;
+          background-color: $mainwhite;
+          .hidden{
+            display: none;
+          }
+        }
+      }
+    }
+    .submit{
+      display: flex;
+      align-items: center;
+      padding: 0 30px;
+      height: 50px;
+      width: 100px;
+      text-decoration: none;
+      background-color: $lightblue;
+      cursor: pointer;
+      color: $mainwhite;
+      .send{
+      text-decoration: none;
+      color: $mainwhite;
+      }
+    }
+  }
+}
