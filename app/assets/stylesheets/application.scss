@@ -1,5 +1,8 @@
 @import "reset";
+@import "config/colors";  /*.notificationの色の変数定義のパーシャルファイル*/
 @import "variable"; //色の変数定義のパーシャルファイル*/
 @import "modules/messages";
 @import "font-awesome-sprockets";
 @import "font-awesome"; /*_variable.scssを読み込み*/
+@import "modules/user";
+@import "modules/flash"; /*フラッシュメッセージ_notification.html読み込み*/
