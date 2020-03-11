@@ -5,7 +5,7 @@
         = current_user.name
       %ul.top-items__icons
         %li.list
-          = link_to "#", class: "icon" do
+          = link_to new_group_path(current_user), class: "icon" do
             = icon('fas', 'edit')
             %span<>
         %li.list
@@ -13,13 +13,9 @@
             = icon('fas', 'cog')
             %span<>
   .side-bar__grouplist
-    .group
-      .group-name
-        techcamp
-      .new-message
-        ああああ
-    .group
-      .group-name
-        test
-      .new-message
-        123  
+    - current_user.groups.each do |group|
+      = link_to '#', class: "group" do
+        .group-name
+          = group.name
+        .new-message
+          メッセージはまだありません。

@@ -47,18 +47,28 @@
     background-color: #2f3e51;
     color: $mainwhite;
     height: calc(100vh - 100px);
-      .group{
-        margin-bottom: 40px;
-        .group-name{
-          margin-bottom: 5px;
-          font-size: 15px;
-        }
-        .new-message{
-          font-size: 11px;
-        }  
+    .group{
+      display: block;
+      margin-bottom: 40px;
+      text-decoration: none;
+      color: $mainwhite;
+      cursor: pointer;
+      .group-name{
+        margin-bottom: 5px;
+        font-size: 15px;
       }
+      .new-message{
+        font-size: 11px;
+      }  
+    }
   }
 }
+
+// a .group-name{
+//   color: white;
+// }
+
+
 
 
 .chat-main {
