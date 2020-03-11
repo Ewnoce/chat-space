@@ -32,20 +32,20 @@ Things you may want to cover:
 |password|string|null: false|
 |name|string|null: false|
 ## Association
-- has_many :groups, through: :groups_users
+- has_many :groups, through: :group_user
 - has_many :messages
-- has_many :groups_users
+- has_many :group_user
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null :false|
+|name|string|null :false, unique :ture|
 ### Association
-- has_many :users, through: :groups_users
+- has_many :users, through: :group_user
 - has_many :messages
-- has_many :groups_users
+- has_many :group_user
 
-## groups_usersテーブル
+## group_userテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
