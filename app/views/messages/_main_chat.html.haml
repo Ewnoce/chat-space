@@ -14,18 +14,22 @@
     .message
       .message__info
         .message__info__name
-          1111name
+          = message.user.name
         .message__info__date
-          2020/01/01(Wed) time
+          = message.created_atstrftime(%Y年%m月%d日 %H時%M分)
       .message-text
-        .content
-          good morning!
+        - if message.content.present?
+          %p.content
+            = message.content
+        = image_tag message.image.url, class: 'message__image' if message.image.present?
   .chat-main__message-form
-    %form.message
-      %input.message__input{placeholder: 'type a message'}
+    .message
+      = render partial: 'messages', collection: @messages
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class 'message__input', placeholder: 'type s message'
       .message__btn
-        %label.image
+        = f.label :image, class: 'image' do
           = icon('far', 'image', class: 'icon')
-          %input.hidden{type: 'file'}
-    %input.submit{type: 'submit', value: 'Send'}
+          = f.file_field :image, class: 'hidden'
+    = f.submit 'Send', class: 'submit'
         
