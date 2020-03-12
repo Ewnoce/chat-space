@@ -16,7 +16,7 @@
         .message__info__name
           = message.user.name
         .message__info__date
-          = message.created_atstrftime(%Y年%m月%d日 %H時%M分)
+          = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
       .message-text
         - if message.content.present?
           %p.content
@@ -26,7 +26,7 @@
     .message
       = render partial: 'messages', collection: @messages
       = form_for [@group, @message] do |f|
-        = f.text_field :content, class 'message__input', placeholder: 'type s message'
+        = f.text_field :content, class: 'message__input', placeholder: 'type a message'
       .message__btn
         = f.label :image, class: 'image' do
           = icon('far', 'image', class: 'icon')
