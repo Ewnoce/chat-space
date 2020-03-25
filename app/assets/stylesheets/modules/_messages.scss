@@ -91,13 +91,13 @@
         font-size: 20px;
         color: #333333;
       }
-      .left-box__nenber-list{
+      .left-box__menber-list{
         display: flex;
         flex-direction: row;
         font-size: 12px;
         color: $lightgray;
       }
-        .left-box__nenber-list-member{
+        .left-box__menber-list-member{
           font-size: 12px;
           color: $lightgray;
         }
@@ -158,46 +158,51 @@
     background-color: #d2d2d2;
     height: 90px;
     width: calc(100vw - 300px);
-    .message{
-      position: relative;
-      margin-right: 15px;
-      float: left;
-      height: 50px;
+    .new_message{
       width: 100%;
-      background-color: $mainwhite;
-      &__input{ 
-        padding: 0 40px 0 10px;
+      display: flex;
+      .message{
+        position: relative;
+        margin-right: 15px;
+        float: left;
         height: 50px;
         width: 100%;
-        color: $gray;
-      }
-      &__btn{
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        .image{
-          cursor: pointer;
-          font-size: 25px;
-          background-color: $mainwhite;
-          .hidden{
-            display: none;
+        background-color: $mainwhite;
+        &__input{ 
+          padding: 0 40px 0 10px;
+          height: 50px;
+          width: 100%;
+          color: $gray;
+        }
+        &__btn{
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          .image{
+            cursor: pointer;
+            font-size: 25px;
+            background-color: $mainwhite;
+            .hidden{
+              display: none;
+            }
           }
         }
       }
-    }
-    .submit{
-      display: flex;
-      align-items: center;
-      padding: 0 30px;
-      height: 50px;
-      width: 100px;
-      text-decoration: none;
-      background-color: $lightblue;
-      cursor: pointer;
-      color: $mainwhite;
-      .send{
-      text-decoration: none;
-      color: $mainwhite;
+    
+      .submit{
+        display: flex;
+        align-items: center;
+        padding: 0 30px;
+        height: 50px;
+        width: 100px;
+        text-decoration: none;
+        background-color: $lightblue;
+        cursor: pointer;
+        color: $mainwhite;
+        .send{
+        text-decoration: none;
+        color: $mainwhite;
+        }
       }
     }
   }

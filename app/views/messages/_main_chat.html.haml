@@ -1,35 +1,26 @@
 .chat-main 
   .chat-main__group-info
     .chat-main__group-info__left-box
-      .left-box__current-group
-        group
-      .left-box__nenber-list
+
+      %h3.left-box__current-group
+        = @group.name
+      .left-box__menber-list
         Member :
-        .left-box__nenber-list__member
-          1111name
+        .left-box__menber-list__member
+          - @group.group_users.each do |group_user|
+            = group_user.user.name
     .chat-main__group-info__edit-btn
-      = link_to "#", class: "edit" do
+      = link_to edit_group_path(@group), class: "edit" do
         Edit
   .chat-main__message-list
-    .message
-      .message__info
-        .message__info__name
-          = message.user.name
-        .message__info__date
-          = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-      .message-text
-        - if message.content.present?
-          %p.content
-            = message.content
-        = image_tag message.image.url, class: 'message__image' if message.image.present?
+    = render @messages
   .chat-main__message-form
-    .message
-      = render partial: 'messages', collection: @messages
-      = form_for [@group, @message] do |f|
+    = form_for [@group, @message] do |f|
+      .message
         = f.text_field :content, class: 'message__input', placeholder: 'type a message'
-      .message__btn
-        = f.label :image, class: 'image' do
-          = icon('far', 'image', class: 'icon')
-          = f.file_field :image, class: 'hidden'
-    = f.submit 'Send', class: 'submit'
+        .message__btn
+          = f.label :image, class: 'image' do
+            = icon('far', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'submit'
         
